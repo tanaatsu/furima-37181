@@ -10,31 +10,31 @@
 |first_name-----------|string--------|null :false--------------------|
 |last_name_k----------|string--------|null :false--------------------|
 |first_name_k---------|string--------|null :false--------------------|
-|birthday-------------|string--------|null :false--------------------|
+|birthday-------------|date----------|null :false--------------------|
 
 ### Association
 has_many :items
+has_many :records
 has_many :comments
-has_many :histories
-has_one :address
+
 
 ## items テーブル
 |Column---------------|Type----------|Options------------------------|
 |---------------------|--------------|-------------------------------|
-|item_name------------|string--------|null :false--------------------|
-|item_text------------|text----------|null :false--------------------|
-|item_price-----------|integer-------|null :false--------------------|
-|item_category--------|string--------|null :false--------------------|
-|item_status----------|string--------|null :false--------------------|
-|postage--------------|string--------|null :false--------------------|
+|name-----------------|string--------|null :false--------------------|
+|text-----------------|text----------|null :false--------------------|
+|price----------------|integer-------|null :false--------------------|
+|category_id----------|integer-------|null :false--------------------|
+|status_id------------|integer-------|null :false--------------------|
+|postage_id-----------|integer-------|null :false--------------------|
 |prefecture_id--------|integer-------|null :false--------------------|
-|days-----------------|string--------|null :false--------------------|
+|days_id--------------|integer-------|null :false--------------------|
 |user-----------------|references----|null :false , foreign_key: true|
 
 ### Association
 belongs_to :user
 has_many :comments
-has_many :histories
+has_one :record
 
 
 ## comments テーブル
@@ -59,17 +59,17 @@ belongs_to :item
 |telephone_num--------|string--------|null :false--------------------|
 
 ### Association
-belongs_to :user
+belongs_to :record
 
-## histories テーブル
+## records テーブル
 |Column---------------|Type----------|Options------------------------|
 |---------------------|--------------|-------------------------------|
-|user_id--------------|references----|null :false, foreign_key: true-|
-|item_id--------------|references----|null :false, foreign_ket: true-|
+|user-----------------|references----|null :false, foreign_key: true-|
+|item-----------------|references----|null :false, foreign_ket: true-|
 
 ### Association
 belongs_to :user
-belongs_to :user
+belongs_to :item
 
 
 
