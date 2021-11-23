@@ -28,7 +28,7 @@ has_many :comments
 |status_id------------|integer-------|null :false--------------------|
 |postage_id-----------|integer-------|null :false--------------------|
 |prefecture_id--------|integer-------|null :false--------------------|
-|days_id--------------|integer-------|null :false--------------------|
+|shipping_day_id------|integer-------|null :false--------------------|
 |user-----------------|references----|null :false , foreign_key: true|
 
 ### Association
@@ -57,6 +57,7 @@ belongs_to :item
 |address--------------|string--------|null :false--------------------|
 |building_name--------|string--------|-------------------------------|
 |telephone_num--------|string--------|null :false--------------------|
+|record---------------|references----|null :false, foreign_key: true-|
 
 ### Association
 belongs_to :record
@@ -70,6 +71,7 @@ belongs_to :record
 ### Association
 belongs_to :user
 belongs_to :item
+belongs_to :address
 
 
 
