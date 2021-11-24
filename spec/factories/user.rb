@@ -2,12 +2,12 @@ FactoryBot.define do
   factory :user do
     nickname               { 'test' }
     email                  { 'test@yahoo.co.jp' }
-    password               { '000000' }
+    password               { 'tanaka777' }
     password_confirmation  { password }
-    last_name              { 'test' }
-    first_name             { 'test' }
-    last_name_k            { 'test' }
-    first_name_k           { 'test' }
+    last_name              { '田たタ' }
+    first_name             { '田たタ' }
+    last_name_k            { 'タナカ' }
+    first_name_k           { 'タナカ' }
     birthday               { '1930-01-01' }
   end
 end
