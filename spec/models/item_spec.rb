@@ -13,11 +13,15 @@ RSpec.describe Item, type: :model do
       end
     end
     context '商品出品ができない時' do
-      it 'nameとimageが空では出品できない' do
+      it 'nameが空では出品できない' do
         @item.name = ''
-        @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Name can't be blank")
+      end
+      it 'imageが空では出品できない' do
+        @item.image = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Image can't be blank")
       end
       it 'textが空では出品できない' do
         @item.text = ''
@@ -69,8 +73,13 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
+      it 'userが紐づいてなければ出品できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include('User must exist')
+      end
     end
   end
 end
 
-#  bundle exec rspec spec/models/item_spec.rb
+
