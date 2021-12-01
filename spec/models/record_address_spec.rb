@@ -3,8 +3,11 @@ require 'rails_helper'
 RSpec.describe RecordAddress, type: :model do
   before do
     user = FactoryBot.create(:user)
-    @record_address = FactoryBot.build(:record_address, user_id: user.id)
+    item = FactoryBot.create(:item)
+    @record_address = FactoryBot.build(:record_address, user_id: user.id, item_id: item.id)
+    sleep(1)
   end
+
   context '内容に問題がない時' do
     it '全て正しく入力されていれば保存できる' do
       expect(@record_address).to be_valid
@@ -51,8 +54,13 @@ RSpec.describe RecordAddress, type: :model do
       @record_address.valid?
       expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
     end
-    it 'telephone_numは10桁以上11以内でなければ登録できない' do
+    it 'telephone_numは10桁以内では登録できない' do
       @record_address.telephone_num = '123456789'
+      @record_address.valid?
+      expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
+    end
+    it 'telephone_numは11桁以上では登録できない' do
+      @record_address.telephone_num = '123456789123'
       @record_address.valid?
       expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
     end

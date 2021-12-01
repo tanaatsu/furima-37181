@@ -5,8 +5,6 @@ FactoryBot.define do
     municipality { '名古屋市' }
     address { '1-1' }
     telephone_num { '12345678910' }
-    user_id { 1 }
-    item_id { 1 }
     token { 'tok_abcdefghijk00000000000000000' }
   end
 end
