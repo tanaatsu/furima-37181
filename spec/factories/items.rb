@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
     name                  { 'test' }
-    text                  { 'test@yahoo.co.jp' }
+    text                  { 'testtesttest' }
     price                 { '1000' }
     category_id           { 2 }
     status_id             { 2 }
