@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!
   before_action :move_to_index, only: [:index]
   before_action :move_to_index1, only: [:index]
-  before_action :set_item, only: [:index,:create,:move_to_index,:move_to_index1]
+  before_action :set_item, only: [:index,:create]
 
 
   def index
@@ -42,12 +42,14 @@ class RecordsController < ApplicationController
   end
 
   def move_to_index
+    @item = Item.find(params[:item_id])
     if user_signed_in? && current_user.id == @item.user_id
        redirect_to root_path 
     end
   end
 
   def move_to_index1
+    @item = Item.find(params[:item_id])
     if @item.record.present?
       redirect_to root_path
     end
