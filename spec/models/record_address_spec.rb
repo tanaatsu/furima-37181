@@ -54,12 +54,12 @@ RSpec.describe RecordAddress, type: :model do
       @record_address.valid?
       expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
     end
-    it 'telephone_numは10桁以内では登録できない' do
+    it 'telephone_numは9桁以内では登録できない' do
       @record_address.telephone_num = '123456789'
       @record_address.valid?
       expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
     end
-    it 'telephone_numは11桁以上では登録できない' do
+    it 'telephone_numは12桁以上では登録できない' do
       @record_address.telephone_num = '123456789123'
       @record_address.valid?
       expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
