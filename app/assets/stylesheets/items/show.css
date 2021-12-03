@@ -207,11 +207,15 @@
 }
 
 .comments-class{
-  padding-top: 50px;
+
+  width: 1200px;
+  background-color: #fff;
+  margin-top: 30px;
 }
 
 .user-info{
   color:#3CCACE ;
+  margin-right: 10px;
 }
 
 .comment{
@@ -220,4 +224,5 @@
 }
 .comments-class h4 {
   margin-bottom: 10px;
+  
 }
