@@ -205,3 +205,23 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.comments-class{
+
+  width: 1200px;
+  margin-top: 30px;
+}
+
+.user-info{
+  color:#3CCACE ;
+  margin-right: 10px;
+}
+
+.comment{
+  display: flex;
+  margin-bottom: 10px;
+}
+.comments-class h4 {
+  margin-bottom: 10px;
+  
+}

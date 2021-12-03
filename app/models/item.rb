@@ -11,6 +11,8 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one    :record, dependent: :destroy
 
+  has_many :comments
+
   validates  :name,   presence: true
   validates  :text,   presence: true
   validates :image,   presence: true
