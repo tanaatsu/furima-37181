@@ -205,3 +205,19 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.comments-class{
+  padding-top: 50px;
+}
+
+.user-info{
+  color:#3CCACE ;
+}
+
+.comment{
+  display: flex;
+  margin-bottom: 10px;
+}
+.comments-class h4 {
+  margin-bottom: 10px;
+}
