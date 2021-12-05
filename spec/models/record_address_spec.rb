@@ -22,62 +22,62 @@ RSpec.describe RecordAddress, type: :model do
     it 'postal_codeが空では登録できない' do
       @record_address.postal_code = ''
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include("Postal code can't be blank")
+      expect(@record_address.errors.full_messages).to include("郵便番号を入力してください")
     end
     it 'postal_codeは半角数字ではないと登録できない' do
       @record_address.postal_code = '１２３４５６７'
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include('Postal code is invalid. Include hyphen(-)')
+      expect(@record_address.errors.full_messages).to include('郵便番号にハイフン(-)を含めて正しく入力してください')
     end
     it 'prefecture_idが「-」であると登録できない' do
       @record_address.prefecture_id = 1
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include("Prefecture can't be blank")
+      expect(@record_address.errors.full_messages).to include("都道府県を選択してください")
     end
     it 'municipalityが空だと登録できない' do
       @record_address.municipality = ''
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include("Municipality can't be blank")
+      expect(@record_address.errors.full_messages).to include("市町村を入力してください")
     end
     it 'addressが空であると登録できない' do
       @record_address.address = ''
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include("Address can't be blank")
+      expect(@record_address.errors.full_messages).to include("番地を入力してください")
     end
     it 'telephone_numが空だと登録できない' do
       @record_address.telephone_num = ''
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include("Telephone num can't be blank")
+      expect(@record_address.errors.full_messages).to include("電話番号を入力してください")
     end
     it 'telephone_numは半角数字でないと登録できない' do
       @record_address.telephone_num = 'aaaaaaa'
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
+      expect(@record_address.errors.full_messages).to include('電話番号を正しく入力してください')
     end
     it 'telephone_numは9桁以内では登録できない' do
       @record_address.telephone_num = '123456789'
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
+      expect(@record_address.errors.full_messages).to include('電話番号を正しく入力してください')
     end
     it 'telephone_numは12桁以上では登録できない' do
       @record_address.telephone_num = '123456789123'
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include('Telephone num is invalid')
+      expect(@record_address.errors.full_messages).to include('電話番号を正しく入力してください')
     end
     it 'userが紐づいていないと登録できない' do
       @record_address.user_id = nil
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include("User can't be blank")
+      expect(@record_address.errors.full_messages).to include("Userを入力してください")
     end
     it 'itemが紐づいていないと登録できない' do
       @record_address.item_id = nil
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include("Item can't be blank")
+      expect(@record_address.errors.full_messages).to include("Itemを入力してください")
     end
     it 'tokenが空では登録できない' do
       @record_address.token = nil
       @record_address.valid?
-      expect(@record_address.errors.full_messages).to include("Token can't be blank")
+      expect(@record_address.errors.full_messages).to include("クレジットカード情報を入力してください")
     end
   end
 end
