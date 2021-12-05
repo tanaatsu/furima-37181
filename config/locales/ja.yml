@@ -1,4 +1,30 @@
 ja:
-  time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        last_name: 苗字
+        first_name: 名前
+        last_name_k: 苗字（カナ）
+        first_name_k: 名前（カナ）
+        birthday: 誕生日
+      item:
+        text: 商品説明
+        image: 商品画像
+        name: 商品名
+        price: 価格
+        category_id: カテゴリー
+        status_id: 商品状態
+        postage_id: 配送料の負担
+        prefecture_id: 発送元の地域
+        shipping_day_id: 発送までの日数
+  activemodel:
+    attributes:
+      record_address:
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        municipality: 市町村
+        address: 番地
+        telephone_num: 電話番号
+        token: クレジットカード情報
+        
